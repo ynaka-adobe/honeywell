@@ -1,0 +1,66 @@
+/* Columns Contact - Honeywell contact CTA section */
+.columns-contact > div:first-child {
+  display: none; /* hide block name row */
+}
+
+.columns-contact > div:last-child {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.columns-contact > div:last-child > div {
+  flex: 1;
+  padding: 30px;
+  background-color: var(--color-white);
+  border-radius: 16px;
+}
+
+.columns-contact p {
+  color: var(--color-dark-text);
+  margin: 0 0 8px;
+}
+
+.columns-contact p:first-child {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--color-gray-600);
+  margin-bottom: 8px;
+}
+
+.columns-contact p:nth-child(2) {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+  color: var(--color-dark-text);
+  margin-bottom: 20px;
+}
+
+.columns-contact a {
+  display: inline-flex;
+  align-items: center;
+  background-color: var(--color-white);
+  color: var(--color-honeywell-blue);
+  border: 2px solid var(--color-honeywell-blue);
+  padding: 12px 24px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.columns-contact a:hover {
+  background-color: var(--color-honeywell-blue);
+  color: var(--color-white);
+}
+
+@media (width >= 900px) {
+  .columns-contact > div:last-child {
+    flex-direction: row;
+    gap: 24px;
+  }
+}

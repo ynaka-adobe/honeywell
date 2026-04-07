@@ -1,0 +1,39 @@
+{
+  "variantName": "columns-contact",
+  "baseBlock": "columns",
+  "version": "1.0.0",
+  "created": "2026-04-07T12:07:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.honeywell.com/us/en",
+    "originPage": "corporate homepage",
+    "blockPosition": "bottom"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "compact",
+    "purpose": "contact-cta",
+    "imagePattern": "noimg"
+  },
+  "contentPattern": {
+    "structure": "label + description + CTA | label + description + CTA",
+    "buttonCount": 2,
+    "imageCount": 0
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "contact/CTA sections",
+      "two-column call-to-action layouts",
+      "support and sales paired CTAs"
+    ],
+    "notSuitableFor": [
+      "image-heavy column layouts",
+      "multi-row column content",
+      "comparison tables"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["content/us/en/index"],
+    "reuseCount": 1,
+    "lastUsed": "2026-04-07T12:07:00.000Z"
+  }
+}

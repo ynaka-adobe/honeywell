@@ -1,0 +1,68 @@
+/* Tabs Industry - Honeywell What We Do section */
+.tabs-industry > div:first-child {
+  display: none; /* hide block name row */
+}
+
+.tabs-industry .tabs-industry-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  max-width: 100%;
+  overflow-x: auto;
+  padding-bottom: 4px;
+  margin-bottom: 24px;
+}
+
+.tabs-industry .tabs-industry-list button {
+  flex: 0 0 auto;
+  margin: 0;
+  border: none;
+  border-radius: 4px;
+  padding: 12px 20px;
+  background-color: rgb(255 255 255 / 10%);
+  color: var(--color-white);
+  font-family: var(--font-family);
+  font-size: 18px;
+  font-weight: 800;
+  text-transform: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  white-space: nowrap;
+}
+
+.tabs-industry .tabs-industry-list button:hover {
+  background-color: rgb(255 255 255 / 20%);
+}
+
+.tabs-industry .tabs-industry-list button[aria-selected="true"] {
+  background-color: var(--color-honeywell-blue);
+  color: var(--color-white);
+}
+
+.tabs-industry .tabs-industry-list button p {
+  margin: 0;
+}
+
+.tabs-industry .tabs-industry-panel {
+  border-radius: 8px;
+  overflow: hidden;
+  min-height: 300px;
+  position: relative;
+}
+
+.tabs-industry .tabs-industry-panel[aria-hidden="true"] {
+  display: none;
+}
+
+.tabs-industry .tabs-industry-panel img {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+@media (width >= 900px) {
+  .tabs-industry .tabs-industry-panel img {
+    height: 450px;
+  }
+}

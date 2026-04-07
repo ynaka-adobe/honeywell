@@ -1,0 +1,39 @@
+{
+  "variantName": "cards-megatrend",
+  "baseBlock": "cards",
+  "version": "1.0.0",
+  "created": "2026-04-07T12:07:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.honeywell.com/us/en",
+    "originPage": "corporate homepage",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "spacious",
+    "purpose": "megatrend-cards",
+    "imagePattern": "icon"
+  },
+  "contentPattern": {
+    "structure": "image + category-label + description",
+    "buttonCount": 0,
+    "imageCount": 3
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "category showcase cards",
+      "feature highlight cards with icons",
+      "business area cards with labels"
+    ],
+    "notSuitableFor": [
+      "news article cards",
+      "product listing cards",
+      "team member cards"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["content/us/en/index"],
+    "reuseCount": 1,
+    "lastUsed": "2026-04-07T12:07:00.000Z"
+  }
+}

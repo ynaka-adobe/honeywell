@@ -1,0 +1,41 @@
+/* Honeywell Sans - Self-hosted */
+
+@font-face {
+  font-family: "Honeywell Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/styles/fonts/HoneywellSansWeb-Book.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Honeywell Sans";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/styles/fonts/HoneywellSansWeb-Medium.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Honeywell Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/styles/fonts/HoneywellSansWeb-Bold.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Honeywell Sans";
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("/styles/fonts/HoneywellSansWeb-Extrabold.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Honeywell Sans";
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url("/styles/fonts/HoneywellSansWeb-Black.woff2") format("woff2");
+}

@@ -1,7 +1,7 @@
 header {
-  --logo-width: 40px;
-  --logo-height: 40px;
-  --mega-columns: 4;
+  --logo-width: 175px;
+  --logo-height: 32px;
+  --mega-columns: 3;
 
   display: block;
   position: fixed;
@@ -11,7 +11,8 @@ header {
   z-index: 1000;
   overflow: hidden;
   max-height: var(--header-height);
-  background-color: light-dark(var(--color-light), var(--color-dark));
+  background-color: var(--color-white);
+  box-shadow: 0 2px 8px rgb(0 0 0 / 10%);
 
   ul {
     margin: 0;
@@ -26,10 +27,7 @@ header {
 
   a {
     text-decoration: none;
-  }
-
-  .btn {
-    margin-block: 6px;
+    color: var(--color-dark-text);
   }
 
   .header-content {
@@ -53,7 +51,8 @@ header {
       padding: 0;
       background-color: transparent;
       height: 100%;
-      width: 64px;
+      width: 48px;
+      cursor: pointer;
 
       .icon {
         width: 24px;
@@ -75,7 +74,7 @@ header {
 
   .menu,
   .mega-menu {
-    padding-bottom: var(--grid-gutter-width);
+    padding-bottom: 16px;
 
     .default-content {
       margin: 0;
@@ -96,17 +95,23 @@ header {
     }
 
     li {
-      margin-block: 12px;
+      margin-block: 8px;
     }
 
-    ul:not(:has(+ *)) {
-      li:last-child {
-        margin-bottom: 0;
-      }
+    li a {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--color-dark-text);
+      padding: 4px 0;
+      display: block;
+    }
+
+    li a:hover {
+      color: var(--color-honeywell-blue);
     }
 
     .section {
-      margin-block: 24px;
+      margin-block: 16px;
     }
 
     &.language {
@@ -126,6 +131,8 @@ header {
       height: var(--header-height);
       display: flex;
       justify-content: space-between;
+      align-items: center;
+      padding: 0 16px;
 
       p,
       a {
@@ -136,12 +143,9 @@ header {
         font-weight: 700;
         text-decoration: none;
         margin: 0;
-        color: var(--color-brand);
+        color: var(--color-dark-text);
 
-        img {
-          height: var(--logo-height);
-        }
-
+        img,
         svg {
           width: var(--logo-width);
           height: var(--logo-height);
@@ -157,7 +161,7 @@ header {
     }
 
     .action-wrapper {
-      right: -23px; /* 64 minus waffle icon inset */
+      right: -12px;
     }
   }
 
@@ -171,15 +175,29 @@ header {
       display: flex;
       justify-content: end;
       align-items: center;
+      gap: 8px;
+      padding: 0 16px;
+
+      a {
+        font-size: 13px;
+        font-weight: 700;
+        color: var(--color-honeywell-blue);
+        text-transform: uppercase;
+        white-space: nowrap;
+      }
+
+      a:hover {
+        color: var(--color-honeywell-blue-dark);
+      }
     }
 
     > .block-content {
-      border-bottom: 1px solid light-dark(var(--color-gray-200), var(--color-gray-600));
+      border-bottom: 1px solid var(--color-gray-200);
     }
 
     .action-wrapper {
       height: var(--header-height);
-      right: -13px;
+      right: -8px;
 
       button {
         width: 44px;
@@ -201,17 +219,26 @@ header {
     }
 
     .main-nav-item {
-      border-bottom: 1px solid light-dark(var(--color-gray-200), var(--color-gray-600));
+      border-bottom: 1px solid var(--color-gray-200);
 
       > * {
         max-width: var(--grid-container-width);
         margin: 0 auto;
+        padding: 0 16px;
       }
     }
 
     .main-nav-link {
       display: block;
-      line-height: 64px;
+      line-height: 48px;
+      font-size: 14px;
+      font-weight: 900;
+      color: var(--color-dark-text);
+      text-transform: capitalize;
+    }
+
+    .main-nav-link:hover {
+      color: var(--color-honeywell-blue);
     }
 
     .menu,
@@ -221,7 +248,8 @@ header {
 
     .is-open {
       .main-nav-link {
-        border-bottom: 1px solid light-dark(var(--color-gray-200), var(--color-gray-600));
+        border-bottom: 1px solid var(--color-gray-200);
+        color: var(--color-honeywell-blue);
       }
 
       .menu,
@@ -242,7 +270,7 @@ header {
     }
 
     .brand-section {
-      border-bottom: 1px solid light-dark(var(--color-gray-200), var(--color-gray-600));
+      border-bottom: 1px solid var(--color-gray-200);
     }
   }
 }
@@ -255,24 +283,27 @@ header {
       max-width: var(--grid-container-width);
       margin: 0 auto;
       grid-template: "brand nav actions" 1fr / auto 1fr auto;
-      gap: var(--spacing-l);
+      gap: 24px;
+      padding: 0 16px;
     }
 
     .menu,
     .mega-menu {
-      background-color: var(--color-shaded);
-      padding: var(--spacing-xl) 0;
+      background-color: var(--color-white);
+      padding: 24px 0;
       position: absolute;
       left: 0;
       right: 0;
+      box-shadow: 0 4px 12px rgb(0 0 0 / 10%);
+      border-top: 1px solid var(--color-gray-200);
 
       &.language {
         display: none;
         max-width: initial;
         margin: 0;
         width: 180px;
-        background-color: var(--color-shaded);
-        padding: var(--spacing-xl);
+        background-color: var(--color-white);
+        padding: 24px;
         position: absolute;
         left: auto;
         right: 0;
@@ -299,6 +330,7 @@ header {
       .default-content {
         max-width: initial;
         margin: 0;
+        padding: 0;
       }
 
       .action-wrapper.more {
@@ -309,15 +341,21 @@ header {
     .main-nav-section {
       .main-nav-list {
         display: flex;
-        gap: var(--spacing-l);
+        gap: 24px;
+        align-items: center;
+        height: 100%;
       }
 
       .main-nav-item {
         border-bottom: initial;
+        height: 100%;
+        display: flex;
+        align-items: center;
 
         > * {
           max-width: initial;
           margin: initial;
+          padding: 0;
         }
 
         &.is-open {
@@ -325,6 +363,29 @@ header {
             border-bottom: initial;
           }
         }
+      }
+
+      .main-nav-link {
+        line-height: var(--header-height);
+        font-size: 14px;
+        position: relative;
+      }
+
+      .main-nav-link::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background-color: var(--color-honeywell-blue);
+        transform: scaleX(0);
+        transition: transform 0.2s ease;
+      }
+
+      .main-nav-link:hover::after,
+      .is-open .main-nav-link::after {
+        transform: scaleX(1);
       }
     }
 
@@ -335,6 +396,8 @@ header {
       .default-content {
         max-width: initial;
         margin: 0;
+        padding: 0;
+        height: 100%;
       }
 
       .action-wrapper {

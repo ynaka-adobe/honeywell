@@ -1,0 +1,77 @@
+/* Cards Megatrend - Honeywell megatrends section */
+.cards-megatrend > div:first-child {
+  display: none; /* hide block name row */
+}
+
+.cards-megatrend > ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+.cards-megatrend > ul > li {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 20px;
+  background-color: var(--color-white);
+  border-radius: 8px;
+  transition: box-shadow 0.3s ease;
+}
+
+.cards-megatrend > ul > li:hover {
+  box-shadow: 0 4px 16px rgb(0 0 0 / 10%);
+}
+
+.cards-megatrend .cards-megatrend-card-image {
+  flex: 0 0 52px;
+  width: 52px;
+  height: 52px;
+  line-height: 0;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.cards-megatrend .cards-megatrend-card-image img {
+  width: 52px;
+  height: 52px;
+  object-fit: cover;
+}
+
+.cards-megatrend .cards-megatrend-card-body {
+  flex: 1;
+}
+
+.cards-megatrend .cards-megatrend-card-body p {
+  margin: 0 0 4px;
+}
+
+.cards-megatrend .cards-megatrend-card-body p a {
+  font-size: 16px;
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: normal;
+  color: var(--color-black);
+  text-decoration: none;
+}
+
+.cards-megatrend .cards-megatrend-card-body p a:hover {
+  color: var(--color-honeywell-blue);
+}
+
+.cards-megatrend .cards-megatrend-card-body h6 {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.4;
+  color: var(--color-dark-text);
+  margin: 0;
+}
+
+@media (width >= 900px) {
+  .cards-megatrend > ul {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

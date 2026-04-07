@@ -1,0 +1,95 @@
+/* Tabs Platform - Honeywell Digitalization section */
+.tabs-platform > div:first-child {
+  display: none; /* hide block name row */
+}
+
+.tabs-platform .tabs-platform-list {
+  display: flex;
+  gap: 8px;
+  max-width: 100%;
+  overflow-x: auto;
+  margin-bottom: 24px;
+}
+
+.tabs-platform .tabs-platform-list button {
+  flex: 0 0 auto;
+  margin: 0;
+  border: 2px solid var(--color-gray-300);
+  border-radius: 4px;
+  padding: 12px 20px;
+  background-color: var(--color-white);
+  color: var(--color-dark-text);
+  font-family: var(--font-family);
+  font-size: 16px;
+  font-weight: 800;
+  text-transform: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.tabs-platform .tabs-platform-list button:hover {
+  border-color: var(--color-honeywell-blue);
+  color: var(--color-honeywell-blue);
+}
+
+.tabs-platform .tabs-platform-list button[aria-selected="true"] {
+  background-color: var(--color-honeywell-blue);
+  border-color: var(--color-honeywell-blue);
+  color: var(--color-white);
+}
+
+.tabs-platform .tabs-platform-list button p {
+  margin: 0;
+}
+
+.tabs-platform .tabs-platform-panel {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  min-height: 300px;
+}
+
+.tabs-platform .tabs-platform-panel[aria-hidden="true"] {
+  display: none;
+}
+
+.tabs-platform .tabs-platform-panel img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.tabs-platform .tabs-platform-panel h5 {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.tabs-platform .tabs-platform-panel p {
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+  max-width: 600px;
+}
+
+.tabs-platform .tabs-platform-panel a {
+  display: inline-flex;
+  align-items: center;
+  background-color: var(--color-white);
+  color: var(--color-honeywell-blue);
+  border: 2px solid var(--color-honeywell-blue);
+  padding: 12px 24px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.tabs-platform .tabs-platform-panel a:hover {
+  background-color: var(--color-honeywell-blue);
+  color: var(--color-white);
+}

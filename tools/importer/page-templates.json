@@ -1,0 +1,87 @@
+{
+  "templates": [
+    {
+      "name": "homepage",
+      "urls": [
+        "https://www.honeywell.com/us/en"
+      ],
+      "description": "Honeywell US homepage with hero, featured content, and promotional sections",
+      "blocks": [
+        {
+          "name": "hero-banner",
+          "instances": ["#hero-banner"]
+        },
+        {
+          "name": "cards-megatrend",
+          "instances": [".section.responsivegrid > .cmp-section-container-preview-mode .sectiontitle + .responsivegrid"]
+        },
+        {
+          "name": "tabs-industry",
+          "instances": [".cmp-leftrail-enhanced"]
+        },
+        {
+          "name": "carousel-news",
+          "instances": [".section.responsivegrid.pt-0.pb-20 .cmp-image__link"]
+        },
+        {
+          "name": "tabs-platform",
+          "instances": [".section.responsivegrid.pt-0.overlap-bottom .nav-tabs.left-rail-tabs"]
+        },
+        {
+          "name": "columns-contact",
+          "instances": [".section.responsivegrid.pt-0.overlap-bottom .bg-white"]
+        }
+      ],
+      "sections": [
+        {
+          "id": "section-1-hero",
+          "name": "Hero Section",
+          "selector": "#hero-banner",
+          "style": "dark",
+          "blocks": ["hero-banner"],
+          "defaultContent": []
+        },
+        {
+          "id": "section-2-megatrends",
+          "name": "Delivering Mega Results on Mega Trends",
+          "selector": ".section.responsivegrid:not(.pt-0)",
+          "style": null,
+          "blocks": ["cards-megatrend"],
+          "defaultContent": [".sectiontitle h2.section-title", ".sectiontitle h6"]
+        },
+        {
+          "id": "section-3-what-we-do",
+          "name": "What We Do",
+          "selector": ".section.responsivegrid.pt-0.pb-20",
+          "style": "dark",
+          "blocks": ["tabs-industry"],
+          "defaultContent": [".sectiontitle h2.section-title"]
+        },
+        {
+          "id": "section-4-whats-new",
+          "name": "Whats New",
+          "selector": [".section.responsivegrid.pt-0.pb-20 ~ .section.responsivegrid.pt-0:not(.pb-20):not(.overlap-bottom)"],
+          "style": null,
+          "blocks": ["carousel-news"],
+          "defaultContent": [".sectiontitle h2.section-title"]
+        },
+        {
+          "id": "section-5-digitalization",
+          "name": "The Next Step Change in Industrial Digitalization",
+          "selector": ".section.responsivegrid.pt-0.overlap-bottom",
+          "style": "light-gray",
+          "blocks": ["tabs-platform"],
+          "defaultContent": [".sectiontitle h2", ".sectiontitle h6"]
+        },
+        {
+          "id": "section-6-contact",
+          "name": "Contact Section",
+          "selector": ".section.responsivegrid.pt-0.overlap-bottom .bg-white",
+          "style": "dark",
+          "blocks": ["columns-contact"],
+          "defaultContent": []
+        }
+      ]
+    }
+  ]
+}

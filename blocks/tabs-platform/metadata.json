@@ -1,0 +1,39 @@
+{
+  "variantName": "tabs-platform",
+  "baseBlock": "tabs",
+  "version": "1.0.0",
+  "created": "2026-04-07T12:07:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.honeywell.com/us/en",
+    "originPage": "corporate homepage",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "spacious",
+    "purpose": "platform-showcase",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "tab-label + heading + description + CTA + background-image",
+    "buttonCount": 1,
+    "imageCount": 3
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "platform/product showcase tabs",
+      "solution detail tabs with CTAs",
+      "feature comparison tabs with images"
+    ],
+    "notSuitableFor": [
+      "simple text-only tabs",
+      "FAQ tabs",
+      "navigation tabs"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["content/us/en/index"],
+    "reuseCount": 1,
+    "lastUsed": "2026-04-07T12:07:00.000Z"
+  }
+}

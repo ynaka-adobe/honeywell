@@ -1,0 +1,39 @@
+{
+  "variantName": "tabs-industry",
+  "baseBlock": "tabs",
+  "version": "1.0.0",
+  "created": "2026-04-07T12:07:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.honeywell.com/us/en",
+    "originPage": "corporate homepage",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "spacious",
+    "purpose": "industry-showcase",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "tab-label + background-image",
+    "buttonCount": 0,
+    "imageCount": 11
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "industry/vertical showcase tabs",
+      "category browsing with background images",
+      "multi-option selectors with visual content"
+    ],
+    "notSuitableFor": [
+      "text-heavy tabbed content",
+      "FAQ-style tabs",
+      "tabs with forms or interactive content"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["content/us/en/index"],
+    "reuseCount": 1,
+    "lastUsed": "2026-04-07T12:07:00.000Z"
+  }
+}
