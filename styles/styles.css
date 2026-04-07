@@ -88,6 +88,7 @@
 
   /* Misc */
   --header-height: 64px;
+  --header-total-height: 104px;
 }
 
 html {
@@ -102,7 +103,7 @@ body {
   font-size: var(--body-font-size-m);
   font-weight: 500;
   line-height: var(--body-line-height);
-  padding: var(--header-height) 0 0;
+  padding: var(--header-total-height) 0 0;
   -webkit-font-smoothing: antialiased;
 
   &.no-header {
