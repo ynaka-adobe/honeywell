@@ -8,7 +8,7 @@ header {
   position: relative;
   z-index: 1000;
   overflow: hidden;
-  max-height: calc(var(--header-height) + var(--topbar-height));
+  max-height: 104px;
   background-color: var(--color-white);
   box-shadow: 0 2px 8px rgb(0 0 0 / 10%);
 
