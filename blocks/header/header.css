@@ -325,7 +325,8 @@ header {
 
 @media (width >= 900px) {
   header {
-    overflow: initial;
+    overflow: visible;
+    max-height: none;
 
     .header-content {
       max-width: var(--grid-container-width);
@@ -352,24 +353,51 @@ header {
     .menu,
     .mega-menu {
       background-color: var(--color-white);
-      padding: 24px 0;
-      position: absolute;
+      padding: 24px 32px;
+      position: fixed;
+      top: calc(var(--topbar-height) + var(--header-height));
       left: 0;
       right: 0;
-      box-shadow: 0 4px 12px rgb(0 0 0 / 10%);
-      border-top: 1px solid var(--color-gray-200);
+      box-shadow: 0 8px 24px rgb(0 0 0 / 12%);
+      border-top: 3px solid var(--color-honeywell-blue);
+      z-index: 1001;
+
+      ul {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        max-width: var(--grid-container-width);
+        margin: 0 auto;
+      }
+
+      li {
+        margin: 0;
+      }
+
+      li a {
+        display: block;
+        padding: 10px 16px;
+        font-size: 14px;
+        font-weight: 500;
+        color: var(--color-dark-text);
+        border-radius: 4px;
+        transition: all 0.15s ease;
+      }
+
+      li a:hover {
+        background-color: var(--color-gray-100);
+        color: var(--color-honeywell-blue);
+      }
 
       &.language {
         display: none;
         max-width: initial;
         margin: 0;
         width: 180px;
-        background-color: var(--color-white);
         padding: 24px;
         position: absolute;
         left: auto;
         right: 0;
-        z-index: 1001;
       }
     }
 
@@ -395,7 +423,7 @@ header {
         padding: 0;
       }
 
-      .action-wrapper.more {
+      .action-wrapper {
         display: none;
       }
     }
@@ -431,23 +459,33 @@ header {
         line-height: var(--header-height);
         font-size: 14px;
         position: relative;
+        border-bottom: 3px solid transparent;
+        transition: border-color 0.2s ease;
       }
 
-      .main-nav-link::after {
+      .main-nav-link:hover,
+      .is-open .main-nav-link {
+        border-bottom-color: var(--color-honeywell-blue);
+        color: var(--color-honeywell-blue);
+      }
+
+      .has-submenu > p > .main-nav-link::after {
         content: "";
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        height: 3px;
-        background-color: var(--color-honeywell-blue);
-        transform: scaleX(0);
-        transition: transform 0.2s ease;
+        display: inline-block;
+        width: 6px;
+        height: 6px;
+        border-right: 2px solid currentcolor;
+        border-bottom: 2px solid currentcolor;
+        transform: rotate(45deg);
+        margin-left: 6px;
+        vertical-align: middle;
+        position: relative;
+        top: -2px;
       }
 
-      .main-nav-link:hover::after,
-      .is-open .main-nav-link::after {
-        transform: scaleX(1);
+      .has-submenu.is-open > p > .main-nav-link::after {
+        transform: rotate(-135deg);
+        top: 1px;
       }
     }
 
