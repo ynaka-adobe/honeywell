@@ -1,39 +1,45 @@
 export default function init(el) {
+  // Remove block name row
+  const firstRow = el.children[0];
+  if (firstRow) firstRow.remove();
+
   const tablist = document.createElement('div');
   tablist.className = 'tabs-industry-list';
   tablist.setAttribute('role', 'tablist');
 
-  const tabs = [...el.children].map((child) => child.firstElementChild);
-  tabs.forEach((tab, i) => {
-    const id = tab.textContent.trim().toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '');
+  const rows = [...el.children];
+  rows.forEach((row, i) => {
+    const labelCell = row.firstElementChild;
+    const id = labelCell.textContent.trim()
+      .toLowerCase().replace(/\s+/g, '-')
+      .replace(/[^a-z0-9-]/g, '');
 
-    const tabpanel = el.children[i];
-    tabpanel.className = 'tabs-industry-panel';
-    tabpanel.id = `tabpanel-${id}`;
-    tabpanel.setAttribute('aria-hidden', !!i);
-    tabpanel.setAttribute('aria-labelledby', `tab-${id}`);
-    tabpanel.setAttribute('role', 'tabpanel');
+    row.className = 'tabs-industry-panel';
+    row.id = `tabpanel-${id}`;
+    row.setAttribute('aria-hidden', !!i);
+    row.setAttribute('aria-labelledby', `tab-${id}`);
+    row.setAttribute('role', 'tabpanel');
 
     const button = document.createElement('button');
     button.className = 'tabs-industry-tab';
     button.id = `tab-${id}`;
-    button.innerHTML = tab.innerHTML;
+    button.textContent = labelCell.textContent.trim();
     button.setAttribute('aria-controls', `tabpanel-${id}`);
     button.setAttribute('aria-selected', !i);
     button.setAttribute('role', 'tab');
     button.setAttribute('type', 'button');
     button.addEventListener('click', () => {
-      el.querySelectorAll('[role=tabpanel]').forEach((panel) => {
-        panel.setAttribute('aria-hidden', true);
+      el.querySelectorAll('[role=tabpanel]').forEach((p) => {
+        p.setAttribute('aria-hidden', true);
       });
-      tablist.querySelectorAll('button').forEach((btn) => {
-        btn.setAttribute('aria-selected', false);
+      tablist.querySelectorAll('button').forEach((b) => {
+        b.setAttribute('aria-selected', false);
       });
-      tabpanel.setAttribute('aria-hidden', false);
+      row.setAttribute('aria-hidden', false);
       button.setAttribute('aria-selected', true);
     });
     tablist.append(button);
-    tab.remove();
+    labelCell.remove();
   });
 
   el.prepend(tablist);
