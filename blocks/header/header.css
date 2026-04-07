@@ -5,10 +5,7 @@ header {
   --topbar-height: 40px;
 
   display: block;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
+  position: relative;
   z-index: 1000;
   overflow: hidden;
   max-height: calc(var(--header-height) + var(--topbar-height));
@@ -354,8 +351,8 @@ header {
     .mega-menu {
       background-color: var(--color-white);
       padding: 24px 32px;
-      position: fixed;
-      top: calc(var(--topbar-height) + var(--header-height));
+      position: absolute;
+      top: 100%;
       left: 0;
       right: 0;
       box-shadow: 0 8px 24px rgb(0 0 0 / 12%);

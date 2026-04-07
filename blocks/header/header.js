@@ -147,11 +147,16 @@ function decorateNavItem(li) {
 function decorateBrandSection(section) {
   section.classList.add('brand-section');
   const brandLink = section.querySelector('a');
-  const [, text] = brandLink.childNodes;
-  const span = document.createElement('span');
-  span.className = 'brand-text';
-  span.append(text);
-  brandLink.append(span);
+  if (!brandLink) return;
+  // Wrap any trailing text node in a hidden span
+  const isText = (n) => n.nodeType === 3 && n.textContent.trim();
+  const textNodes = [...brandLink.childNodes].filter(isText);
+  textNodes.forEach((text) => {
+    const span = document.createElement('span');
+    span.className = 'brand-text';
+    span.append(text);
+    brandLink.append(span);
+  });
 }
 
 function decorateNavSection(section) {

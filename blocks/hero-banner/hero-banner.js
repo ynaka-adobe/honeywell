@@ -1,5 +1,6 @@
-export default function decorate(block) {
-  if (!block.querySelector(':scope > div:first-child picture')) {
-    block.classList.add('no-image');
+export default function init(el) {
+  const hasImage = el.querySelector('img');
+  if (!hasImage) {
+    el.classList.add('no-image');
   }
 }
