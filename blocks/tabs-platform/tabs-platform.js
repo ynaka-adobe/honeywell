@@ -1,40 +1,76 @@
 export default function init(el) {
-  const tablist = document.createElement('div');
-  tablist.className = 'tabs-platform-list';
-  tablist.setAttribute('role', 'tablist');
+  // Remove block name row
+  const firstRow = el.children[0];
+  if (firstRow) firstRow.remove();
 
-  const tabs = [...el.children].map((child) => child.firstElementChild);
-  tabs.forEach((tab, i) => {
-    const id = tab.textContent.trim().toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '');
+  const rows = [...el.children];
+  const headersRow = document.createElement('div');
+  headersRow.className = 'tabs-platform-headers';
 
-    const tabpanel = el.children[i];
-    tabpanel.className = 'tabs-platform-panel';
-    tabpanel.id = `tabpanel-${id}`;
-    tabpanel.setAttribute('aria-hidden', !!i);
-    tabpanel.setAttribute('aria-labelledby', `tab-${id}`);
-    tabpanel.setAttribute('role', 'tabpanel');
+  let imagePanel = null;
 
-    const button = document.createElement('button');
-    button.className = 'tabs-platform-tab';
-    button.id = `tab-${id}`;
-    button.innerHTML = tab.innerHTML;
-    button.setAttribute('aria-controls', `tabpanel-${id}`);
-    button.setAttribute('aria-selected', !i);
-    button.setAttribute('role', 'tab');
-    button.setAttribute('type', 'button');
-    button.addEventListener('click', () => {
-      el.querySelectorAll('[role=tabpanel]').forEach((panel) => {
-        panel.setAttribute('aria-hidden', true);
-      });
-      tablist.querySelectorAll('button').forEach((btn) => {
-        btn.setAttribute('aria-selected', false);
-      });
-      tabpanel.setAttribute('aria-hidden', false);
-      button.setAttribute('aria-selected', true);
+  rows.forEach((row) => {
+    const labelCell = row.firstElementChild;
+    const contentCell = row.lastElementChild;
+    const label = labelCell.textContent.trim();
+
+    // Special _image row — becomes the large image panel
+    if (label === '_image') {
+      imagePanel = document.createElement('div');
+      imagePanel.className = 'tabs-platform-image-panel';
+      if (contentCell) {
+        const img = contentCell.querySelector('img');
+        if (img) imagePanel.append(img);
+
+        const box = document.createElement('div');
+        box.className = 'tabs-platform-content-box';
+        const textEls = contentCell.querySelectorAll('h5, p');
+        textEls.forEach((t) => box.append(t));
+        if (box.children.length) imagePanel.append(box);
+      }
+      row.remove();
+      return;
+    }
+
+    // Accordion item
+    const item = document.createElement('div');
+    item.className = 'tabs-platform-item';
+
+    const header = document.createElement('button');
+    header.className = 'tabs-platform-header';
+    header.setAttribute('type', 'button');
+    header.setAttribute('aria-expanded', 'false');
+    header.innerHTML = '<span class="tabs-platform-label">'
+      + `${label}</span>`
+      + '<span class="tabs-platform-icon"></span>';
+
+    const desc = document.createElement('div');
+    desc.className = 'tabs-platform-desc';
+    desc.setAttribute('aria-hidden', 'true');
+    if (contentCell && contentCell !== labelCell) {
+      desc.innerHTML = contentCell.innerHTML;
+    }
+
+    header.addEventListener('click', () => {
+      const isOpen = item.classList.contains('is-open');
+      // Toggle this item
+      if (isOpen) {
+        item.classList.remove('is-open');
+        header.setAttribute('aria-expanded', 'false');
+        desc.setAttribute('aria-hidden', 'true');
+      } else {
+        item.classList.add('is-open');
+        header.setAttribute('aria-expanded', 'true');
+        desc.setAttribute('aria-hidden', 'false');
+      }
     });
-    tablist.append(button);
-    tab.remove();
+
+    item.append(header);
+    item.append(desc);
+    headersRow.append(item);
+    row.remove();
   });
 
-  el.prepend(tablist);
+  el.append(headersRow);
+  if (imagePanel) el.append(imagePanel);
 }

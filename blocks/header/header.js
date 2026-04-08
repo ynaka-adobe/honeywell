@@ -186,17 +186,19 @@ function decorateTopBarSection(section) {
 
 async function decorateHeader(fragment) {
   const sections = fragment.querySelectorAll(':scope > .section');
-  // 4-section layout: topbar, brand, nav, actions
   if (sections.length >= 4) {
-    if (sections[0]) decorateTopBarSection(sections[0]);
-    if (sections[1]) decorateBrandSection(sections[1]);
-    if (sections[2]) decorateNavSection(sections[2]);
-    if (sections[3]) decorateActionSection(sections[3]);
+    decorateTopBarSection(sections[0]);
+    decorateBrandSection(sections[1]);
+    decorateNavSection(sections[2]);
+    decorateActionSection(sections[3]);
+  } else if (sections.length === 3) {
+    // 3-section: topbar, brand, nav
+    decorateTopBarSection(sections[0]);
+    decorateBrandSection(sections[1]);
+    decorateNavSection(sections[2]);
   } else {
-    // Fallback: 3-section layout (brand, nav, actions)
     if (sections[0]) decorateBrandSection(sections[0]);
     if (sections[1]) decorateNavSection(sections[1]);
-    if (sections[2]) decorateActionSection(sections[2]);
   }
 
   for (const pattern of HEADER_ACTIONS) {

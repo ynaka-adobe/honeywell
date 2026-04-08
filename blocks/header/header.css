@@ -350,18 +350,19 @@ header {
     .menu,
     .mega-menu {
       background-color: var(--color-white);
-      padding: 24px 32px;
+      padding: 16px 32px 24px;
       position: absolute;
       top: 100%;
       left: 0;
       right: 0;
       box-shadow: 0 8px 24px rgb(0 0 0 / 12%);
-      border-top: 3px solid var(--color-honeywell-blue);
+      border-top: 1px solid var(--color-gray-200);
       z-index: 1001;
 
       ul {
         display: flex;
-        flex-direction: column;
+        flex-flow: row wrap;
+        justify-content: center;
         gap: 0;
         max-width: var(--grid-container-width);
         margin: 0 auto;
@@ -369,16 +370,32 @@ header {
 
       li {
         margin: 0;
+        flex: 0 0 auto;
+        min-width: 140px;
       }
 
       li a {
-        display: block;
-        padding: 10px 16px;
-        font-size: 14px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 20px 16px;
+        font-size: 13px;
         font-weight: 500;
         color: var(--color-dark-text);
         border-radius: 4px;
         transition: all 0.15s ease;
+        gap: 12px;
+      }
+
+      li a::before {
+        content: "";
+        display: block;
+        width: 48px;
+        height: 48px;
+        border: 1px solid var(--color-gray-300);
+        border-radius: 50%;
+        background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23303030' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 2L2 7l10 5 10-5-10-5z'/%3E%3Cpath d='M2 17l10 5 10-5'/%3E%3Cpath d='M2 12l10 5 10-5'/%3E%3C/svg%3E") center / 24px no-repeat;
       }
 
       li a:hover {
@@ -462,8 +479,8 @@ header {
 
       .main-nav-link:hover,
       .is-open .main-nav-link {
-        border-bottom-color: var(--color-honeywell-blue);
-        color: var(--color-honeywell-blue);
+        border-bottom-color: #d0011b;
+        color: var(--color-dark-text);
       }
 
       .has-submenu > p > .main-nav-link::after {

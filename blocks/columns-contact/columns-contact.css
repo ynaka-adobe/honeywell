@@ -1,4 +1,10 @@
 /* Columns Contact - Honeywell contact CTA section */
+.columns-contact {
+  background-color: #f7f7f7;
+  border-radius: 8px;
+  padding: 30px;
+}
+
 .columns-contact > div:first-child {
   display: none; /* hide block name row */
 }
@@ -11,9 +17,6 @@
 
 .columns-contact > div:last-child > div {
   flex: 1;
-  padding: 30px;
-  background-color: var(--color-white);
-  border-radius: 16px;
 }
 
 .columns-contact p {

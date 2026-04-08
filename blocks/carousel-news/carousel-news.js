@@ -90,6 +90,11 @@ let carouselId = 0;
 export default function init(el) {
   carouselId += 1;
   el.setAttribute('id', `carousel-news-${carouselId}`);
+
+  // Remove block name row
+  const firstRow = el.children[0];
+  if (firstRow) firstRow.remove();
+
   const rows = el.querySelectorAll(':scope > div');
   const isSingleSlide = rows.length < 2;
 

@@ -1,15 +1,17 @@
-export default function decorate(block) {
-  const cols = [...block.firstElementChild.children];
-  block.classList.add(`columns-contact-${cols.length}-cols`);
+export default function init(el) {
+  // Remove block name row
+  const firstRow = el.children[0];
+  if (firstRow) firstRow.remove();
 
-  // setup image columns
-  [...block.children].forEach((row) => {
+  const cols = [...el.firstElementChild.children];
+  el.classList.add(`columns-contact-${cols.length}-cols`);
+
+  [...el.children].forEach((row) => {
     [...row.children].forEach((col) => {
-      const pic = col.querySelector('picture');
+      const pic = col.querySelector('picture, img');
       if (pic) {
         const picWrapper = pic.closest('div');
         if (picWrapper && picWrapper.children.length === 1) {
-          // picture is only content in column
           picWrapper.classList.add('columns-contact-img-col');
         }
       }
