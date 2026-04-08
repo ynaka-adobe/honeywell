@@ -82,6 +82,42 @@
           "defaultContent": []
         }
       ]
+    },
+    {
+      "name": "customer-stories",
+      "urls": [
+        "https://www.honeywell.com/us/en/customer-stories"
+      ],
+      "description": "Customer stories listing page with testimonials and case studies",
+      "blocks": []
+    },
+    {
+      "name": "contact-page",
+      "urls": [
+        "https://www.honeywell.com/us/en/contact"
+      ],
+      "description": "Contact page with support and business inquiry options",
+      "blocks": []
+    },
+    {
+      "name": "solution-page",
+      "urls": [
+        "https://www.honeywell.com/us/en/automation",
+        "https://www.honeywell.com/us/en/energy-transition",
+        "https://www.honeywell.com/us/en/future-of-aviation",
+        "https://www.honeywell.com/us/en/solutions/honeywell-forge",
+        "https://www.honeywell.com/us/en/company/ot-cybersecurity"
+      ],
+      "description": "Solution and initiative landing pages with hero, content sections, and CTAs",
+      "blocks": []
+    },
+    {
+      "name": "products-page",
+      "urls": [
+        "https://www.honeywell.com/us/en/industries/products"
+      ],
+      "description": "Products and solutions overview page",
+      "blocks": []
     }
   ]
 }
