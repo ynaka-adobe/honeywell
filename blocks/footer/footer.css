@@ -1,57 +1,150 @@
+/* Footer - Honeywell dark footer with 4-column links */
 footer {
+  background-color: var(--color-gray-900);
+  color: var(--color-white);
+
   a {
+    color: rgb(255 255 255 / 80%);
     text-decoration: none;
+  }
+
+  a:hover {
+    color: var(--color-white);
   }
 
   .footer-content {
     max-width: var(--grid-container-width);
-    margin: 48px auto;
+    margin: 0 auto;
+    padding: 60px 16px 0;
     font-size: 14px;
-  }
-
-  .section-legal ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-  }
-
-  .section-copyright p {
-    margin: 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0;
   }
 
   .section {
+    padding: 0;
+
     .default-content {
       max-width: initial;
       margin: initial;
+      padding: 0;
+    }
+  }
+
+  .section p strong {
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--color-white);
+    display: block;
+    margin-bottom: 12px;
+  }
+
+  .section p {
+    margin: 0;
+  }
+
+  .section p + ul {
+    margin-bottom: 28px;
+  }
+
+  .section ul {
+    list-style: none;
+    margin: 0 0 28px;
+    padding: 0;
+  }
+
+  .section li {
+    margin: 0 0 8px;
+  }
+
+  .section li a {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.6;
+  }
+
+  /* Social icons row */
+  .section li a .icon {
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 4px;
+  }
+
+  .section li a .icon svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  /* Legal links bar */
+  .section-legal {
+    grid-column: 1 / -1;
+    border-top: 1px solid rgb(255 255 255 / 15%);
+    padding: 20px 0;
+    margin-top: 20px;
+
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 20px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    li {
+      margin: 0;
+    }
+
+    li a {
+      font-size: 13px;
+      color: rgb(255 255 255 / 60%);
+    }
+
+    li + li::before {
+      content: "|";
+      color: rgb(255 255 255 / 30%);
+      margin-right: 20px;
+    }
+  }
+
+  /* Copyright bar */
+  .section-copyright {
+    grid-column: 1 / -1;
+    padding: 0 0 24px;
+
+    p {
+      margin: 0;
+      font-size: 13px;
+      color: rgb(255 255 255 / 60%);
     }
   }
 }
 
 @media (width >= 900px) {
   footer {
-    margin: 0;
+    .footer-content {
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0 40px;
+      padding: 60px 16px 0;
+    }
 
     .section-legal {
       display: flex;
-      justify-content: end;
-      gap: var(--spacing-xl);
-      margin-bottom: 24px;
+      justify-content: flex-end;
+      align-items: center;
 
       ul {
-        display: flex;
-        justify-content: end;
-        gap: var(--spacing-xl);
-      }
-
-      li {
-        margin: 0;
+        justify-content: flex-end;
       }
     }
 
     .section-copyright {
-      display: flex;
-      justify-content: end;
-      gap: var(--spacing-xl);
+      padding-bottom: 30px;
     }
   }
 }
