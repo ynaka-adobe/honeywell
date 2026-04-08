@@ -1,7 +1,10 @@
 import { getConfig, getMetadata } from '../../scripts/ak.js';
 import { loadFragment } from '../fragment/fragment.js';
 
-const FOOTER_PATH = '/fragments/nav/footer';
+const isLocal = window.location.hostname === 'localhost';
+const FOOTER_PATH = isLocal
+  ? '/content/fragments/nav/footer'
+  : '/fragments/nav/footer';
 
 /**
  * loads and decorates the footer

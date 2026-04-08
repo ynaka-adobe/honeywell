@@ -388,14 +388,19 @@ header {
         gap: 12px;
       }
 
-      li a::before {
-        content: "";
-        display: block;
+      li a .icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
         width: 48px;
         height: 48px;
         border: 1px solid var(--color-gray-300);
         border-radius: 50%;
-        background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23303030' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 2L2 7l10 5 10-5-10-5z'/%3E%3Cpath d='M2 17l10 5 10-5'/%3E%3Cpath d='M2 12l10 5 10-5'/%3E%3C/svg%3E") center / 24px no-repeat;
+      }
+
+      li a .icon svg {
+        width: 28px;
+        height: 28px;
       }
 
       li a:hover {
@@ -470,9 +475,11 @@ header {
       }
 
       .main-nav-link {
-        line-height: var(--header-height);
+        display: inline-block;
+        line-height: 1.2;
         font-size: 14px;
         position: relative;
+        padding: 3px 0;
         border-bottom: 3px solid transparent;
         transition: border-color 0.2s ease;
       }
